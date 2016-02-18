@@ -64,7 +64,7 @@ namespace Face_Race_Picker
                 foreach (player p in Players)
                 {
                     CsvRow row = new CsvRow();
-                    row.Add(p.name + " " + p.face + " " + p.race);
+                    row.Add(p.name + "," + p.face + "," + p.race);
                     writer.WriteRow(row);
                 }
             }
