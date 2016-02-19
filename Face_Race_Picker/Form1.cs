@@ -23,6 +23,12 @@ namespace Face_Race_Picker
 
         public void Update_List_View(ListView List_View)
         {
+            int top = 0;
+            if (List_View.Items.Count > 0)
+            {
+
+                top = List_View.TopItem.Index;
+            }
             List_View.Items.Clear();
             foreach (player p in NBA_Players.Players)
             {
@@ -33,6 +39,10 @@ namespace Face_Race_Picker
                 List_View.Items.Add(item);
             }
             List_View.Refresh();
+            if (top >= 0)
+            {
+                List_View.TopItem = List_View.Items[top];
+            }
         }
 
         public void btn_edit_Click(object sender, EventArgs e)
@@ -40,6 +50,8 @@ namespace Face_Race_Picker
             NBA_Players.EditPlayer(index, face, race);
             NBA_Players.WritePlayers();
             Update_List_View(lsv_Players);
+            if (index >= 0)
+                lsv_Players.Items[index+1].Selected = true;
         }
 
         private void lsv_Players_SelectedIndexChanged(object sender, EventArgs e)
