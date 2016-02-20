@@ -50,8 +50,18 @@ namespace Face_Race_Picker
             NBA_Players.EditPlayer(index, face, race);
             NBA_Players.WritePlayers();
             Update_List_View(lsv_Players);
-            if (index >= 0)
-                lsv_Players.Items[index+1].Selected = true;
+            if (index >= 0 && (index < lsv_Players.Items.Count))
+            {
+                lsv_Players.Items[index + 1].Selected = true;
+                if (index > lsv_Players.TopItem.Index)
+                {
+                    lsv_Players.TopItem = lsv_Players.Items[lsv_Players.TopItem.Index + 1];
+                }
+                else
+                {
+                    lsv_Players.TopItem = lsv_Players.Items[index];
+                }
+            }
         }
 
         private void lsv_Players_SelectedIndexChanged(object sender, EventArgs e)
@@ -74,20 +84,28 @@ namespace Face_Race_Picker
         }
 
         private void Change_Face(string face)
-        {
-            btn_face.Image = System.Drawing.Image.FromFile(face + ".png");
-            lbl_face_num.Text = face;
+        {          
+            object o = Properties.Resources.ResourceManager.GetObject( "_" + face );
+            if (o is Image)
+            {
+                btn_face.Image = o as Image;
+                lbl_face_num.Text = face;
+            }
+            else
+            {
+                lbl_face.Text = "ERROR";
+            }
         }
         private void Change_Race(string race)
         {
-            btn_race.Image = System.Drawing.Image.FromFile(race + "_R.png");
-            lbl_race_num.Text = race;
+            object o = Properties.Resources.ResourceManager.GetObject("_" + race + "_R");
+            if (o is Image)
+            {
+                btn_race.Image = o as Image;
+                lbl_race_num.Text = race;
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
         int index = -1;
         string name;
         string face;
@@ -358,7 +376,6 @@ namespace Face_Race_Picker
         {
 
         }
-
-        
+       
     }
 }

@@ -79,6 +79,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -94,6 +95,45 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="00.PNG" />
+    <None Include="00_R.PNG" />
+    <None Include="0A.PNG" />
+    <None Include="0B.PNG" />
+    <None Include="0C.PNG" />
+    <None Include="0D.PNG" />
+    <None Include="0E.PNG" />
+    <None Include="0F.PNG" />
+    <None Include="01.PNG" />
+    <None Include="01_R.PNG" />
+    <None Include="1A.PNG" />
+    <None Include="1B.PNG" />
+    <None Include="02.PNG" />
+    <None Include="02_R.PNG" />
+    <None Include="03.PNG" />
+    <None Include="03_R.PNG" />
+    <None Include="04.PNG" />
+    <None Include="05.PNG" />
+    <None Include="06.PNG" />
+    <None Include="07.PNG" />
+    <None Include="08.PNG" />
+    <None Include="09.PNG" />
+    <None Include="10.PNG" />
+    <None Include="11.PNG" />
+    <None Include="12.PNG" />
+    <None Include="13.PNG" />
+    <None Include="14.PNG" />
+    <None Include="15.PNG" />
+    <None Include="16.PNG" />
+    <None Include="17.PNG" />
+    <None Include="18.PNG" />
+    <None Include="19.PNG" />
+    <None Include="20.PNG" />
+    <None Include="21.PNG" />
+    <None Include="22.PNG" />
+    <None Include="23.PNG" />
+    <None Include="24.PNG" />
+    <None Include="25.PNG" />
+    <None Include="26.PNG" />
     <Content Include="Image1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +152,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
